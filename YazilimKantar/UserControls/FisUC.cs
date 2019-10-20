@@ -91,7 +91,7 @@ namespace YazilimKantar.UserControls
                 dgwBrut.Refresh();
             }
         }
-        int sıfır = 1;
+
         private void btnGunceleme_Click(object sender, EventArgs e)
         {
             DataGridYenile();
