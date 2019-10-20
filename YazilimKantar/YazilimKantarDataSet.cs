@@ -19,3 +19,4 @@ namespace YazilimKantar {
     public partial class YazilimKantarDataSet {
     }
 }
+

@@ -198,13 +198,6 @@ namespace YazilimKantar.UserControls
         }
         private void cmbKlnci_SelectedIndexChanged(object sender, EventArgs e)
         {
-            conn.Open();
-            SqlCommand command = new SqlCommand("Select * from Kullanici Where KullncAdi like'%" + cmbKlnci.Text + "%'", conn);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-            DataSet data = new DataSet();
-            dataAdapter.Fill(data, "Kullanici");
-            dgwOperator.DataSource = data.Tables[0];
-            conn.Close();
             txtYSifre.Text = string.Empty;
         }
         private void btnArama_Click(object sender, EventArgs e)

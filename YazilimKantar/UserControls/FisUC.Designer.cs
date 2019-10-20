@@ -39,8 +39,26 @@
             this.pnlDGW = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgwBrut = new System.Windows.Forms.DataGridView();
+            this.brutBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yazilimKantarDataSet = new YazilimKantar.YazilimKantarDataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlUst = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.YonTus = new System.Windows.Forms.ImageList(this.components);
+            this.btnRapor = new System.Windows.Forms.Button();
+            this.btnElmnBir = new System.Windows.Forms.Button();
+            this.btnGunceleme = new System.Windows.Forms.Button();
+            this.btnElmnSon = new System.Windows.Forms.Button();
+            this.btnSonrakiElmn = new System.Windows.Forms.Button();
+            this.btnOncekiElmn = new System.Windows.Forms.Button();
+            this.btnArama = new System.Windows.Forms.Button();
+            this.brutTableAdapter = new YazilimKantar.YazilimKantarDataSetTableAdapters.BrutTableAdapter();
+            this.cmbPlakaNo = new System.Windows.Forms.ComboBox();
+            this.txtTartimNo = new System.Windows.Forms.TextBox();
+            this.fisUCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fisUCTableAdapter = new YazilimKantar.YazilimKantarDataSetTableAdapters.FisUCTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
             this.ıdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tartimNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plakaNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giTarihDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciTarihDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,25 +74,6 @@
             this.tartimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brutBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.yazilimKantarDataSet = new YazilimKantar.YazilimKantarDataSet();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlUst = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.YonTus = new System.Windows.Forms.ImageList(this.components);
-            this.btnRapor = new System.Windows.Forms.Button();
-            this.btnElmnBir = new System.Windows.Forms.Button();
-            this.btnGunceleme = new System.Windows.Forms.Button();
-            this.btnElmnSon = new System.Windows.Forms.Button();
-            this.btnSonrakiElmn = new System.Windows.Forms.Button();
-            this.btnOncekiElmn = new System.Windows.Forms.Button();
-            this.btnArama = new System.Windows.Forms.Button();
-            this.brutTableAdapter = new YazilimKantar.YazilimKantarDataSetTableAdapters.BrutTableAdapter();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtPlkaNo = new System.Windows.Forms.TextBox();
-            this.fisUCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fisUCTableAdapter = new YazilimKantar.YazilimKantarDataSetTableAdapters.FisUCTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlDVeri.SuspendLayout();
             this.pnlRapor.SuspendLayout();
             this.pnlRaporu.SuspendLayout();
@@ -172,7 +171,6 @@
             this.dgwBrut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwBrut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ıdDataGridViewTextBoxColumn,
-            this.tartimNoDataGridViewTextBoxColumn,
             this.plakaNoDataGridViewTextBoxColumn,
             this.giTarihDataGridViewTextBoxColumn,
             this.ciTarihDataGridViewTextBoxColumn,
@@ -194,126 +192,6 @@
             this.dgwBrut.Size = new System.Drawing.Size(974, 190);
             this.dgwBrut.TabIndex = 0;
             // 
-            // ıdDataGridViewTextBoxColumn
-            // 
-            this.ıdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ıdDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.ıdDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.ıdDataGridViewTextBoxColumn.Name = "ıdDataGridViewTextBoxColumn";
-            this.ıdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tartimNoDataGridViewTextBoxColumn
-            // 
-            this.tartimNoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tartimNoDataGridViewTextBoxColumn.DataPropertyName = "TartimNo";
-            this.tartimNoDataGridViewTextBoxColumn.HeaderText = "TartimNo";
-            this.tartimNoDataGridViewTextBoxColumn.Name = "tartimNoDataGridViewTextBoxColumn";
-            // 
-            // plakaNoDataGridViewTextBoxColumn
-            // 
-            this.plakaNoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.plakaNoDataGridViewTextBoxColumn.DataPropertyName = "PlakaNo";
-            this.plakaNoDataGridViewTextBoxColumn.HeaderText = "PlakaNo";
-            this.plakaNoDataGridViewTextBoxColumn.Name = "plakaNoDataGridViewTextBoxColumn";
-            // 
-            // giTarihDataGridViewTextBoxColumn
-            // 
-            this.giTarihDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.giTarihDataGridViewTextBoxColumn.DataPropertyName = "GiTarih";
-            this.giTarihDataGridViewTextBoxColumn.HeaderText = "GiTarih";
-            this.giTarihDataGridViewTextBoxColumn.Name = "giTarihDataGridViewTextBoxColumn";
-            // 
-            // ciTarihDataGridViewTextBoxColumn
-            // 
-            this.ciTarihDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ciTarihDataGridViewTextBoxColumn.DataPropertyName = "CiTarih";
-            this.ciTarihDataGridViewTextBoxColumn.HeaderText = "CiTarih";
-            this.ciTarihDataGridViewTextBoxColumn.Name = "ciTarihDataGridViewTextBoxColumn";
-            // 
-            // giSaatDataGridViewTextBoxColumn
-            // 
-            this.giSaatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.giSaatDataGridViewTextBoxColumn.DataPropertyName = "GiSaat";
-            this.giSaatDataGridViewTextBoxColumn.HeaderText = "GiSaat";
-            this.giSaatDataGridViewTextBoxColumn.Name = "giSaatDataGridViewTextBoxColumn";
-            // 
-            // ciSaatDataGridViewTextBoxColumn
-            // 
-            this.ciSaatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ciSaatDataGridViewTextBoxColumn.DataPropertyName = "CiSaat";
-            this.ciSaatDataGridViewTextBoxColumn.HeaderText = "CiSaat";
-            this.ciSaatDataGridViewTextBoxColumn.Name = "ciSaatDataGridViewTextBoxColumn";
-            // 
-            // firmAdiDataGridViewTextBoxColumn
-            // 
-            this.firmAdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.firmAdiDataGridViewTextBoxColumn.DataPropertyName = "FirmAdi";
-            this.firmAdiDataGridViewTextBoxColumn.HeaderText = "FirmAdi";
-            this.firmAdiDataGridViewTextBoxColumn.Name = "firmAdiDataGridViewTextBoxColumn";
-            // 
-            // giFirmAdiDataGridViewTextBoxColumn
-            // 
-            this.giFirmAdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.giFirmAdiDataGridViewTextBoxColumn.DataPropertyName = "GiFirmAdi";
-            this.giFirmAdiDataGridViewTextBoxColumn.HeaderText = "GiFirmAdi";
-            this.giFirmAdiDataGridViewTextBoxColumn.Name = "giFirmAdiDataGridViewTextBoxColumn";
-            // 
-            // malzemeDataGridViewTextBoxColumn
-            // 
-            this.malzemeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.malzemeDataGridViewTextBoxColumn.DataPropertyName = "Malzeme";
-            this.malzemeDataGridViewTextBoxColumn.HeaderText = "Malzeme";
-            this.malzemeDataGridViewTextBoxColumn.Name = "malzemeDataGridViewTextBoxColumn";
-            // 
-            // operatorDataGridViewTextBoxColumn
-            // 
-            this.operatorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.operatorDataGridViewTextBoxColumn.DataPropertyName = "Operator";
-            this.operatorDataGridViewTextBoxColumn.HeaderText = "Operator";
-            this.operatorDataGridViewTextBoxColumn.Name = "operatorDataGridViewTextBoxColumn";
-            // 
-            // gelilDataGridViewTextBoxColumn
-            // 
-            this.gelilDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gelilDataGridViewTextBoxColumn.DataPropertyName = "Gelil";
-            this.gelilDataGridViewTextBoxColumn.HeaderText = "Gelil";
-            this.gelilDataGridViewTextBoxColumn.Name = "gelilDataGridViewTextBoxColumn";
-            // 
-            // gitilDataGridViewTextBoxColumn
-            // 
-            this.gitilDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gitilDataGridViewTextBoxColumn.DataPropertyName = "Gitil";
-            this.gitilDataGridViewTextBoxColumn.HeaderText = "Gitil";
-            this.gitilDataGridViewTextBoxColumn.Name = "gitilDataGridViewTextBoxColumn";
-            // 
-            // aciklamaDataGridViewTextBoxColumn
-            // 
-            this.aciklamaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.aciklamaDataGridViewTextBoxColumn.DataPropertyName = "Aciklama";
-            this.aciklamaDataGridViewTextBoxColumn.HeaderText = "Aciklama";
-            this.aciklamaDataGridViewTextBoxColumn.Name = "aciklamaDataGridViewTextBoxColumn";
-            // 
-            // tartimDataGridViewTextBoxColumn
-            // 
-            this.tartimDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tartimDataGridViewTextBoxColumn.DataPropertyName = "Tartim";
-            this.tartimDataGridViewTextBoxColumn.HeaderText = "Tartim";
-            this.tartimDataGridViewTextBoxColumn.Name = "tartimDataGridViewTextBoxColumn";
-            // 
-            // brutDataGridViewTextBoxColumn
-            // 
-            this.brutDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.brutDataGridViewTextBoxColumn.DataPropertyName = "Brut";
-            this.brutDataGridViewTextBoxColumn.HeaderText = "Brut";
-            this.brutDataGridViewTextBoxColumn.Name = "brutDataGridViewTextBoxColumn";
-            // 
-            // kgDataGridViewTextBoxColumn
-            // 
-            this.kgDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.kgDataGridViewTextBoxColumn.DataPropertyName = "Kg";
-            this.kgDataGridViewTextBoxColumn.HeaderText = "Kg";
-            this.kgDataGridViewTextBoxColumn.Name = "kgDataGridViewTextBoxColumn";
-            // 
             // brutBindingSource
             // 
             this.brutBindingSource.DataMember = "Brut";
@@ -329,7 +207,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(45, 73);
+            this.label1.Location = new System.Drawing.Point(37, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 19);
             this.label1.TabIndex = 29;
@@ -379,7 +257,7 @@
             this.btnRapor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRapor.ImageIndex = 5;
             this.btnRapor.ImageList = this.YonTus;
-            this.btnRapor.Location = new System.Drawing.Point(509, 64);
+            this.btnRapor.Location = new System.Drawing.Point(509, 72);
             this.btnRapor.Margin = new System.Windows.Forms.Padding(2);
             this.btnRapor.Name = "btnRapor";
             this.btnRapor.Size = new System.Drawing.Size(40, 40);
@@ -396,12 +274,13 @@
             this.btnElmnBir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnElmnBir.ImageIndex = 0;
             this.btnElmnBir.ImageList = this.YonTus;
-            this.btnElmnBir.Location = new System.Drawing.Point(568, 64);
+            this.btnElmnBir.Location = new System.Drawing.Point(568, 72);
             this.btnElmnBir.Margin = new System.Windows.Forms.Padding(2);
             this.btnElmnBir.Name = "btnElmnBir";
             this.btnElmnBir.Size = new System.Drawing.Size(40, 40);
             this.btnElmnBir.TabIndex = 106;
             this.btnElmnBir.UseVisualStyleBackColor = false;
+            this.btnElmnBir.Click += new System.EventHandler(this.btnElmnBir_Click);
             // 
             // btnGunceleme
             // 
@@ -412,12 +291,13 @@
             this.btnGunceleme.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGunceleme.ImageIndex = 4;
             this.btnGunceleme.ImageList = this.YonTus;
-            this.btnGunceleme.Location = new System.Drawing.Point(694, 63);
+            this.btnGunceleme.Location = new System.Drawing.Point(694, 71);
             this.btnGunceleme.Margin = new System.Windows.Forms.Padding(2);
             this.btnGunceleme.Name = "btnGunceleme";
             this.btnGunceleme.Size = new System.Drawing.Size(40, 40);
             this.btnGunceleme.TabIndex = 110;
             this.btnGunceleme.UseVisualStyleBackColor = false;
+            this.btnGunceleme.Click += new System.EventHandler(this.btnGunceleme_Click);
             // 
             // btnElmnSon
             // 
@@ -428,12 +308,13 @@
             this.btnElmnSon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnElmnSon.ImageIndex = 1;
             this.btnElmnSon.ImageList = this.YonTus;
-            this.btnElmnSon.Location = new System.Drawing.Point(823, 63);
+            this.btnElmnSon.Location = new System.Drawing.Point(823, 71);
             this.btnElmnSon.Margin = new System.Windows.Forms.Padding(2);
             this.btnElmnSon.Name = "btnElmnSon";
             this.btnElmnSon.Size = new System.Drawing.Size(40, 40);
             this.btnElmnSon.TabIndex = 109;
             this.btnElmnSon.UseVisualStyleBackColor = false;
+            this.btnElmnSon.Click += new System.EventHandler(this.btnElmnSon_Click);
             // 
             // btnSonrakiElmn
             // 
@@ -444,12 +325,13 @@
             this.btnSonrakiElmn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSonrakiElmn.ImageIndex = 3;
             this.btnSonrakiElmn.ImageList = this.YonTus;
-            this.btnSonrakiElmn.Location = new System.Drawing.Point(760, 63);
+            this.btnSonrakiElmn.Location = new System.Drawing.Point(760, 71);
             this.btnSonrakiElmn.Margin = new System.Windows.Forms.Padding(2);
             this.btnSonrakiElmn.Name = "btnSonrakiElmn";
             this.btnSonrakiElmn.Size = new System.Drawing.Size(40, 40);
             this.btnSonrakiElmn.TabIndex = 108;
             this.btnSonrakiElmn.UseVisualStyleBackColor = false;
+            this.btnSonrakiElmn.Click += new System.EventHandler(this.btnSonrakiElmn_Click);
             // 
             // btnOncekiElmn
             // 
@@ -460,12 +342,13 @@
             this.btnOncekiElmn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOncekiElmn.ImageIndex = 2;
             this.btnOncekiElmn.ImageList = this.YonTus;
-            this.btnOncekiElmn.Location = new System.Drawing.Point(631, 64);
+            this.btnOncekiElmn.Location = new System.Drawing.Point(631, 72);
             this.btnOncekiElmn.Margin = new System.Windows.Forms.Padding(2);
             this.btnOncekiElmn.Name = "btnOncekiElmn";
             this.btnOncekiElmn.Size = new System.Drawing.Size(40, 40);
             this.btnOncekiElmn.TabIndex = 107;
             this.btnOncekiElmn.UseVisualStyleBackColor = false;
+            this.btnOncekiElmn.Click += new System.EventHandler(this.btnOncekiElmn_Click);
             // 
             // btnArama
             // 
@@ -476,7 +359,7 @@
             this.btnArama.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnArama.ImageIndex = 6;
             this.btnArama.ImageList = this.YonTus;
-            this.btnArama.Location = new System.Drawing.Point(451, 64);
+            this.btnArama.Location = new System.Drawing.Point(451, 72);
             this.btnArama.Margin = new System.Windows.Forms.Padding(2);
             this.btnArama.Name = "btnArama";
             this.btnArama.Size = new System.Drawing.Size(40, 40);
@@ -488,29 +371,29 @@
             // 
             this.brutTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox1
+            // cmbPlakaNo
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.brutBindingSource, "PlakaNo", true));
-            this.comboBox1.DataSource = this.brutBindingSource;
-            this.comboBox1.DisplayMember = "PlakaNo";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 113;
-            this.comboBox1.ValueMember = "PlakaNo";
+            this.cmbPlakaNo.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.brutBindingSource, "PlakaNo", true));
+            this.cmbPlakaNo.DataSource = this.brutBindingSource;
+            this.cmbPlakaNo.DisplayMember = "PlakaNo";
+            this.cmbPlakaNo.FormattingEnabled = true;
+            this.cmbPlakaNo.Location = new System.Drawing.Point(125, 83);
+            this.cmbPlakaNo.Name = "cmbPlakaNo";
+            this.cmbPlakaNo.Size = new System.Drawing.Size(121, 21);
+            this.cmbPlakaNo.TabIndex = 113;
+            this.cmbPlakaNo.ValueMember = "PlakaNo";
             // 
-            // txtPlkaNo
+            // txtTartimNo
             // 
-            this.txtPlkaNo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPlkaNo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtPlkaNo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPlkaNo.Location = new System.Drawing.Point(354, 73);
-            this.txtPlkaNo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPlkaNo.Name = "txtPlkaNo";
-            this.txtPlkaNo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtPlkaNo.Size = new System.Drawing.Size(88, 23);
-            this.txtPlkaNo.TabIndex = 114;
+            this.txtTartimNo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTartimNo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtTartimNo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtTartimNo.Location = new System.Drawing.Point(346, 81);
+            this.txtTartimNo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTartimNo.Name = "txtTartimNo";
+            this.txtTartimNo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTartimNo.Size = new System.Drawing.Size(88, 23);
+            this.txtTartimNo.TabIndex = 114;
             // 
             // fisUCBindingSource
             // 
@@ -526,11 +409,124 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(260, 75);
+            this.label2.Location = new System.Drawing.Point(252, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 19);
             this.label2.TabIndex = 115;
             this.label2.Text = "Tartım No  :";
+            // 
+            // ıdDataGridViewTextBoxColumn
+            // 
+            this.ıdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ıdDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.ıdDataGridViewTextBoxColumn.HeaderText = "Tartım No";
+            this.ıdDataGridViewTextBoxColumn.Name = "ıdDataGridViewTextBoxColumn";
+            this.ıdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // plakaNoDataGridViewTextBoxColumn
+            // 
+            this.plakaNoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.plakaNoDataGridViewTextBoxColumn.DataPropertyName = "PlakaNo";
+            this.plakaNoDataGridViewTextBoxColumn.HeaderText = "Plaka No";
+            this.plakaNoDataGridViewTextBoxColumn.Name = "plakaNoDataGridViewTextBoxColumn";
+            // 
+            // giTarihDataGridViewTextBoxColumn
+            // 
+            this.giTarihDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.giTarihDataGridViewTextBoxColumn.DataPropertyName = "GiTarih";
+            this.giTarihDataGridViewTextBoxColumn.HeaderText = "Giriş Tarih";
+            this.giTarihDataGridViewTextBoxColumn.Name = "giTarihDataGridViewTextBoxColumn";
+            // 
+            // ciTarihDataGridViewTextBoxColumn
+            // 
+            this.ciTarihDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ciTarihDataGridViewTextBoxColumn.DataPropertyName = "CiTarih";
+            this.ciTarihDataGridViewTextBoxColumn.HeaderText = "Cıkış Tarih";
+            this.ciTarihDataGridViewTextBoxColumn.Name = "ciTarihDataGridViewTextBoxColumn";
+            // 
+            // giSaatDataGridViewTextBoxColumn
+            // 
+            this.giSaatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.giSaatDataGridViewTextBoxColumn.DataPropertyName = "GiSaat";
+            this.giSaatDataGridViewTextBoxColumn.HeaderText = "Giriş Saat";
+            this.giSaatDataGridViewTextBoxColumn.Name = "giSaatDataGridViewTextBoxColumn";
+            // 
+            // ciSaatDataGridViewTextBoxColumn
+            // 
+            this.ciSaatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ciSaatDataGridViewTextBoxColumn.DataPropertyName = "CiSaat";
+            this.ciSaatDataGridViewTextBoxColumn.HeaderText = "Cıkış Saat";
+            this.ciSaatDataGridViewTextBoxColumn.Name = "ciSaatDataGridViewTextBoxColumn";
+            // 
+            // firmAdiDataGridViewTextBoxColumn
+            // 
+            this.firmAdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.firmAdiDataGridViewTextBoxColumn.DataPropertyName = "FirmAdi";
+            this.firmAdiDataGridViewTextBoxColumn.HeaderText = "Firma Adı";
+            this.firmAdiDataGridViewTextBoxColumn.Name = "firmAdiDataGridViewTextBoxColumn";
+            // 
+            // giFirmAdiDataGridViewTextBoxColumn
+            // 
+            this.giFirmAdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.giFirmAdiDataGridViewTextBoxColumn.DataPropertyName = "GiFirmAdi";
+            this.giFirmAdiDataGridViewTextBoxColumn.HeaderText = "Gittiği Firma Adı";
+            this.giFirmAdiDataGridViewTextBoxColumn.Name = "giFirmAdiDataGridViewTextBoxColumn";
+            // 
+            // malzemeDataGridViewTextBoxColumn
+            // 
+            this.malzemeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.malzemeDataGridViewTextBoxColumn.DataPropertyName = "Malzeme";
+            this.malzemeDataGridViewTextBoxColumn.HeaderText = "Malzeme Adı";
+            this.malzemeDataGridViewTextBoxColumn.Name = "malzemeDataGridViewTextBoxColumn";
+            // 
+            // operatorDataGridViewTextBoxColumn
+            // 
+            this.operatorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.operatorDataGridViewTextBoxColumn.DataPropertyName = "Operator";
+            this.operatorDataGridViewTextBoxColumn.HeaderText = "Personel Adı";
+            this.operatorDataGridViewTextBoxColumn.Name = "operatorDataGridViewTextBoxColumn";
+            // 
+            // gelilDataGridViewTextBoxColumn
+            // 
+            this.gelilDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gelilDataGridViewTextBoxColumn.DataPropertyName = "Gelil";
+            this.gelilDataGridViewTextBoxColumn.HeaderText = "Geldiği İl";
+            this.gelilDataGridViewTextBoxColumn.Name = "gelilDataGridViewTextBoxColumn";
+            // 
+            // gitilDataGridViewTextBoxColumn
+            // 
+            this.gitilDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gitilDataGridViewTextBoxColumn.DataPropertyName = "Gitil";
+            this.gitilDataGridViewTextBoxColumn.HeaderText = "Gittiği İl";
+            this.gitilDataGridViewTextBoxColumn.Name = "gitilDataGridViewTextBoxColumn";
+            // 
+            // aciklamaDataGridViewTextBoxColumn
+            // 
+            this.aciklamaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.aciklamaDataGridViewTextBoxColumn.DataPropertyName = "Aciklama";
+            this.aciklamaDataGridViewTextBoxColumn.HeaderText = "Aciklama (Not)";
+            this.aciklamaDataGridViewTextBoxColumn.Name = "aciklamaDataGridViewTextBoxColumn";
+            // 
+            // tartimDataGridViewTextBoxColumn
+            // 
+            this.tartimDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tartimDataGridViewTextBoxColumn.DataPropertyName = "Tartim";
+            this.tartimDataGridViewTextBoxColumn.HeaderText = "İlk Tartım (Dara)";
+            this.tartimDataGridViewTextBoxColumn.Name = "tartimDataGridViewTextBoxColumn";
+            // 
+            // brutDataGridViewTextBoxColumn
+            // 
+            this.brutDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.brutDataGridViewTextBoxColumn.DataPropertyName = "Brut";
+            this.brutDataGridViewTextBoxColumn.HeaderText = "Son Tarım (Brut)";
+            this.brutDataGridViewTextBoxColumn.Name = "brutDataGridViewTextBoxColumn";
+            // 
+            // kgDataGridViewTextBoxColumn
+            // 
+            this.kgDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.kgDataGridViewTextBoxColumn.DataPropertyName = "Kg";
+            this.kgDataGridViewTextBoxColumn.HeaderText = "Net (Kg)";
+            this.kgDataGridViewTextBoxColumn.Name = "kgDataGridViewTextBoxColumn";
             // 
             // FisUC
             // 
@@ -538,8 +534,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(209)))), ((int)(((byte)(234)))));
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.txtPlkaNo);
+            this.Controls.Add(this.cmbPlakaNo);
+            this.Controls.Add(this.txtTartimNo);
             this.Controls.Add(this.btnArama);
             this.Controls.Add(this.btnRapor);
             this.Controls.Add(this.btnElmnBir);
@@ -592,8 +588,15 @@
         private System.Windows.Forms.Panel pnlDGW;
         private System.Windows.Forms.Panel pnlRaporu;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.BindingSource brutBindingSource;
+        private YazilimKantarDataSet yazilimKantarDataSet;
+        private YazilimKantarDataSetTableAdapters.BrutTableAdapter brutTableAdapter;
+        private System.Windows.Forms.ComboBox cmbPlakaNo;
+        private System.Windows.Forms.TextBox txtTartimNo;
+        private System.Windows.Forms.BindingSource fisUCBindingSource;
+        private YazilimKantarDataSetTableAdapters.FisUCTableAdapter fisUCTableAdapter;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ıdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tartimNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn plakaNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giTarihDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ciTarihDataGridViewTextBoxColumn;
@@ -609,13 +612,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tartimDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn brutDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kgDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource brutBindingSource;
-        private YazilimKantarDataSet yazilimKantarDataSet;
-        private YazilimKantarDataSetTableAdapters.BrutTableAdapter brutTableAdapter;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox txtPlkaNo;
-        private System.Windows.Forms.BindingSource fisUCBindingSource;
-        private YazilimKantarDataSetTableAdapters.FisUCTableAdapter fisUCTableAdapter;
-        private System.Windows.Forms.Label label2;
     }
 }

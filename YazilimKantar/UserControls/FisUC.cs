@@ -28,6 +28,14 @@ namespace YazilimKantar.UserControls
 
         private void btnArama_Click(object sender, EventArgs e)
         {
+            
+            conn.Open();
+            SqlCommand command = new SqlCommand("Select * from Brut Where PlakaNo like'%" + cmbPlakaNo.Text + "%'", conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataSet data = new DataSet();
+            dataAdapter.Fill(data, "Brut");
+            dgwBrut.DataSource = data.Tables[0];
+            conn.Close();
             pnlDGW.Dock = DockStyle.Fill;
             pnlDVeri.Controls.Clear();
             pnlDVeri.Controls.Add(pnlDGW);
@@ -35,10 +43,16 @@ namespace YazilimKantar.UserControls
 
         private void btnRapor_Click(object sender, EventArgs e)
         {
-            this.fisUCTableAdapter.Fill(this.yazilimKantarDataSet.FisUC, comboBox1.Text);
-            pnlRaporu.Dock = DockStyle.Fill;
-            pnlDVeri.Controls.Clear();
-            pnlDVeri.Controls.Add(pnlRaporu);
+            if (txtTartimNo.Text == "")
+            { MessageBox.Show("Tarım No Giriniz.", "Lütfen");}
+            else
+            {               
+                this.fisUCTableAdapter.Fill(this.yazilimKantarDataSet.FisUC, Convert.ToInt32(txtTartimNo.Text));
+                tpDaraData.Controls.Add(RaporClss.GetReport(System.Environment.CurrentDirectory + "\\Raporm\\RprtFisUC.rdlc", "DataSetFisUC", fisUCBindingSource));
+                pnlRaporu.Dock = DockStyle.Fill;
+                pnlDVeri.Controls.Clear();
+                pnlDVeri.Controls.Add(pnlRaporu);
+            }
         }
 
         private void FisUC_Load(object sender, EventArgs e)
@@ -47,9 +61,70 @@ namespace YazilimKantar.UserControls
             pnlDVeri.Controls.Clear();
             pnlDVeri.Controls.Add(pnlDGW);
             this.brutTableAdapter.Fill(this.yazilimKantarDataSet.Brut);
-            this.fisUCTableAdapter.Fill(this.yazilimKantarDataSet.FisUC , comboBox1.Text);
-            tpDaraData.Controls.Add(RaporClss.GetReport(System.Environment.CurrentDirectory + "\\Raporm\\RprtFisUC.rdlc", "DataSetFisUC", fisUCBindingSource));
+        }
+        int b;
+        private void btnElmnBir_Click(object sender, EventArgs e)
+        {
+            dgwBrut.Rows[0].Selected = true;
+            b = 0;
+            dgwBrut.FirstDisplayedScrollingRowIndex = b;
+            dgwBrut.CurrentCell = dgwBrut.Rows[b].Cells[0];
+            dgwBrut.Refresh();
         }
 
+        private void btnOncekiElmn_Click(object sender, EventArgs e)
+        {
+            if (b > 0)
+            {
+                b -= 1;
+                dgwBrut.Rows[b].Selected = true;
+                dgwBrut.FirstDisplayedScrollingRowIndex = b;
+                dgwBrut.CurrentCell = dgwBrut.Rows[b].Cells[0];
+                dgwBrut.Refresh();
+            }
+            else
+            {
+                b = dgwBrut.Rows.Count - 1;
+                dgwBrut.Rows[b].Selected = true;
+                dgwBrut.FirstDisplayedScrollingRowIndex = b;
+                dgwBrut.CurrentCell = dgwBrut.Rows[b].Cells[0];
+                dgwBrut.Refresh();
+            }
+        }
+        int sıfır = 1;
+        private void btnGunceleme_Click(object sender, EventArgs e)
+        {
+            DataGridYenile();
+            this.brutTableAdapter.Fill(this.yazilimKantarDataSet.Brut);
+        }
+
+        private void btnSonrakiElmn_Click(object sender, EventArgs e)
+        {
+            if (b < dgwBrut.Rows.Count - 1)
+            {
+                b += 1;
+                dgwBrut.Rows[b].Selected = true;
+                dgwBrut.FirstDisplayedScrollingRowIndex = b;
+                dgwBrut.CurrentCell = dgwBrut.Rows[b].Cells[0];
+                dgwBrut.Refresh();
+            }
+            else
+            {
+                dgwBrut.Rows[0].Selected = true;
+                b = 0;
+                dgwBrut.FirstDisplayedScrollingRowIndex = b;
+                dgwBrut.CurrentCell = dgwBrut.Rows[b].Cells[0];
+                dgwBrut.Refresh();
+            }
+        }
+
+        private void btnElmnSon_Click(object sender, EventArgs e)
+        {
+            dgwBrut.Rows[dgwBrut.Rows.Count - 1].Selected = true;
+            b = dgwBrut.Rows.Count - 1;
+            dgwBrut.FirstDisplayedScrollingRowIndex = b;
+            dgwBrut.CurrentCell = dgwBrut.Rows[b].Cells[0];
+            dgwBrut.Refresh();
+        }
     }
 }
