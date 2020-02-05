@@ -612,7 +612,7 @@
             this.btnTartim.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnTartim.ForeColor = System.Drawing.Color.Black;
             this.btnTartim.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTartim.Location = new System.Drawing.Point(684, 563);
+            this.btnTartim.Location = new System.Drawing.Point(684, 564);
             this.btnTartim.Name = "btnTartim";
             this.btnTartim.Size = new System.Drawing.Size(90, 23);
             this.btnTartim.TabIndex = 90;
@@ -628,7 +628,7 @@
             this.btnBrut.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnBrut.ForeColor = System.Drawing.Color.Black;
             this.btnBrut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBrut.Location = new System.Drawing.Point(780, 563);
+            this.btnBrut.Location = new System.Drawing.Point(780, 564);
             this.btnBrut.Name = "btnBrut";
             this.btnBrut.Size = new System.Drawing.Size(79, 23);
             this.btnBrut.TabIndex = 91;
