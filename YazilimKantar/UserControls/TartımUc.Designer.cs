@@ -70,13 +70,13 @@
             this.cmbOperator = new System.Windows.Forms.ComboBox();
             this.cmbGFirma = new System.Windows.Forms.ComboBox();
             this.cmbPlaka = new System.Windows.Forms.ComboBox();
+            this.cYAracBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.yazilimKantarDataSet = new YazilimKantar.YazilimKantarDataSet();
             this.cmbAciklama = new System.Windows.Forms.ComboBox();
             this.pnlData = new System.Windows.Forms.Panel();
             this.pnlDVeri = new System.Windows.Forms.Panel();
             this.dgwTartim = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tartimNoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plakaNoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giTarihDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giSaatDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,7 +89,6 @@
             this.tartimBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgwSabit = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tartimNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plakaNoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giTarihDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giSaatDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -189,9 +188,9 @@
             this.tartimTableAdapter = new YazilimKantar.YazilimKantarDataSetTableAdapters.TartimTableAdapter();
             this.pnlUst = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.cYAracBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cYAracTableAdapter = new YazilimKantar.YazilimKantarDataSetTableAdapters.CYAracTableAdapter();
             this.pnlAlt.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cYAracBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yazilimKantarDataSet)).BeginInit();
             this.pnlData.SuspendLayout();
             this.pnlDVeri.SuspendLayout();
@@ -201,7 +200,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sabitBindingSource)).BeginInit();
             this.pnlUst.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cYAracBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKg
@@ -361,7 +359,7 @@
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(454, 62);
+            this.label3.Location = new System.Drawing.Point(454, 64);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -614,7 +612,7 @@
             this.btnTartim.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnTartim.ForeColor = System.Drawing.Color.Black;
             this.btnTartim.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTartim.Location = new System.Drawing.Point(684, 565);
+            this.btnTartim.Location = new System.Drawing.Point(684, 563);
             this.btnTartim.Name = "btnTartim";
             this.btnTartim.Size = new System.Drawing.Size(90, 23);
             this.btnTartim.TabIndex = 90;
@@ -630,7 +628,7 @@
             this.btnBrut.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnBrut.ForeColor = System.Drawing.Color.Black;
             this.btnBrut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBrut.Location = new System.Drawing.Point(780, 565);
+            this.btnBrut.Location = new System.Drawing.Point(780, 563);
             this.btnBrut.Name = "btnBrut";
             this.btnBrut.Size = new System.Drawing.Size(79, 23);
             this.btnBrut.TabIndex = 91;
@@ -669,6 +667,7 @@
             this.cBxGrs.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cBxGrs.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cBxGrs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cBxGrs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBxGrs.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cBxGrs.FormattingEnabled = true;
             this.cBxGrs.Items.AddRange(new object[] {
@@ -707,6 +706,7 @@
             this.cBxCks.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cBxCks.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cBxCks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cBxCks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBxCks.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cBxCks.FormattingEnabled = true;
             this.cBxCks.Items.AddRange(new object[] {
@@ -992,6 +992,11 @@
             this.cmbPlaka.ValueMember = "PlakaNo";
             this.cmbPlaka.SelectedIndexChanged += new System.EventHandler(this.cmbPlaka_SelectedIndexChanged);
             // 
+            // cYAracBindingSource
+            // 
+            this.cYAracBindingSource.DataMember = "CYArac";
+            this.cYAracBindingSource.DataSource = this.yazilimKantarDataSet;
+            // 
             // yazilimKantarDataSet
             // 
             this.yazilimKantarDataSet.DataSetName = "YazilimKantarDataSet";
@@ -1043,7 +1048,6 @@
             this.dgwTartim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwTartim.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.tartimNoDataGridViewTextBoxColumn1,
             this.plakaNoDataGridViewTextBoxColumn2,
             this.giTarihDataGridViewTextBoxColumn2,
             this.giSaatDataGridViewTextBoxColumn2,
@@ -1064,16 +1068,9 @@
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "ID";
+            this.Id.HeaderText = "Tartım No";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            // 
-            // tartimNoDataGridViewTextBoxColumn1
-            // 
-            this.tartimNoDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tartimNoDataGridViewTextBoxColumn1.DataPropertyName = "TartimNo";
-            this.tartimNoDataGridViewTextBoxColumn1.HeaderText = "Tartım No";
-            this.tartimNoDataGridViewTextBoxColumn1.Name = "tartimNoDataGridViewTextBoxColumn1";
             // 
             // plakaNoDataGridViewTextBoxColumn2
             // 
@@ -1151,7 +1148,6 @@
             this.dgwSabit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwSabit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn57,
-            this.tartimNoDataGridViewTextBoxColumn,
             this.plakaNoDataGridViewTextBoxColumn1,
             this.giTarihDataGridViewTextBoxColumn1,
             this.giSaatDataGridViewTextBoxColumn1,
@@ -1172,16 +1168,9 @@
             // 
             this.dataGridViewTextBoxColumn57.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn57.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn57.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn57.HeaderText = "Tartım No";
             this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
             this.dataGridViewTextBoxColumn57.ReadOnly = true;
-            // 
-            // tartimNoDataGridViewTextBoxColumn
-            // 
-            this.tartimNoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tartimNoDataGridViewTextBoxColumn.DataPropertyName = "TartimNo";
-            this.tartimNoDataGridViewTextBoxColumn.HeaderText = "Tartım No";
-            this.tartimNoDataGridViewTextBoxColumn.Name = "tartimNoDataGridViewTextBoxColumn";
             // 
             // plakaNoDataGridViewTextBoxColumn1
             // 
@@ -1944,11 +1933,6 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // cYAracBindingSource
-            // 
-            this.cYAracBindingSource.DataMember = "CYArac";
-            this.cYAracBindingSource.DataSource = this.yazilimKantarDataSet;
-            // 
             // cYAracTableAdapter
             // 
             this.cYAracTableAdapter.ClearBeforeFill = true;
@@ -2002,6 +1986,7 @@
             this.Load += new System.EventHandler(this.TartımUc_Load);
             this.pnlAlt.ResumeLayout(false);
             this.pnlAlt.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cYAracBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yazilimKantarDataSet)).EndInit();
             this.pnlData.ResumeLayout(false);
             this.pnlData.PerformLayout();
@@ -2012,7 +1997,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sabitBindingSource)).EndInit();
             this.pnlUst.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cYAracBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2154,8 +2138,12 @@
         private System.Windows.Forms.BindingSource sabitBindingSource;
         private YazilimKantarDataSetTableAdapters.SabitTableAdapter sabitTableAdapter;
         private YazilimKantarDataSetTableAdapters.TartimTableAdapter tartimTableAdapter;
+        private System.Windows.Forms.ImageList YonTus;
+        private System.Windows.Forms.Panel pnlUst;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.BindingSource cYAracBindingSource;
+        private YazilimKantarDataSetTableAdapters.CYAracTableAdapter cYAracTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tartimNoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn plakaNoDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn giTarihDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn giSaatDataGridViewTextBoxColumn2;
@@ -2165,11 +2153,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gelilDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn aciklamaDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn tartimDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.ImageList YonTus;
-        private System.Windows.Forms.Panel pnlUst;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn57;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tartimNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn plakaNoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn giTarihDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn giSaatDataGridViewTextBoxColumn1;
@@ -2179,7 +2163,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gelilDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aciklamaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tartimDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.BindingSource cYAracBindingSource;
-        private YazilimKantarDataSetTableAdapters.CYAracTableAdapter cYAracTableAdapter;
     }
 }

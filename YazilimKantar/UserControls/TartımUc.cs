@@ -92,29 +92,29 @@ namespace YazilimKantar.UserControls
 
         public void satirDegisti()  //Tartim
         {
-            txtTrtmNo.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[1].Value.ToString();
-            txtPlkaNo.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[2].Value.ToString();
-            dtpGiris.Text=dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[3].Value.ToString(); 
-            cBxGrs.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[4].Value.ToString();
-            txtFrmaAd.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[5].Value.ToString();
-            txtMalzeme.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[6].Value.ToString();
-            txtOprtr.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[7].Value.ToString();
-            cBxGldgil.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[8].Value.ToString();
-            txtNot.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[9].Value.ToString();
-            txtDara.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[10].Value.ToString();
+            txtTrtmNo.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[0].Value.ToString();
+            txtPlkaNo.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[1].Value.ToString();
+            dtpGiris.Text=dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[2].Value.ToString(); 
+            cBxGrs.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[3].Value.ToString();
+            txtFrmaAd.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[4].Value.ToString();
+            txtMalzeme.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[5].Value.ToString();
+            txtOprtr.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[6].Value.ToString();
+            cBxGldgil.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[7].Value.ToString();
+            txtNot.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[8].Value.ToString();
+            txtDara.Text = dgwTartim.Rows[dgwTartim.CurrentRow.Index].Cells[9].Value.ToString();
         }
         public void satirDegistir()  //Sabit
         {
-            txtTrtmNo.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[1].Value.ToString();
-            txtPlkaNo.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[2].Value.ToString();
-            dtpGiris.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[3].Value.ToString();
-            cBxGrs.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[4].Value.ToString();
-            txtFrmaAd.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[5].Value.ToString();
-            txtMalzeme.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[6].Value.ToString();
-            txtOprtr.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[7].Value.ToString();
-            cBxGldgil.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[8].Value.ToString();
-            txtNot.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[9].Value.ToString();
-            txtDara.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[10].Value.ToString();
+            txtTrtmNo.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[0].Value.ToString();
+            txtPlkaNo.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[1].Value.ToString();
+            dtpGiris.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[2].Value.ToString();
+            cBxGrs.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[3].Value.ToString();
+            txtFrmaAd.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[4].Value.ToString();
+            txtMalzeme.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[5].Value.ToString();
+            txtOprtr.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[6].Value.ToString();
+            cBxGldgil.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[7].Value.ToString();
+            txtNot.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[8].Value.ToString();
+            txtDara.Text = dgwSabit.Rows[dgwSabit.CurrentRow.Index].Cells[9].Value.ToString();
         }
         int i,j;
         private void btnElmnBir_Click(object sender, EventArgs e)
